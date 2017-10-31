@@ -6,7 +6,7 @@
 convertToDogYears :: Float -> Float 
 convertToDogYears 0 = 0
 convertToDogYears age 
-        | (abs age) <= 2 = ((abs age) * 10.5) * sign
+        | (abs age) <= 2 = ((abs age) * 11) * sign
         | otherwise = (2 * 10.5 + rest*4) * sign
         
 
