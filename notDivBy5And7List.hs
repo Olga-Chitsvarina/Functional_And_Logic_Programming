@@ -29,6 +29,15 @@ returnNotDivBy5And7ListComprehensions :: [Int] -> [Int]
 returnNotDivBy5And7ListComprehensions list =    [x|x <- list, 
                                                 (x `rem` 5)/= 0, 
                                                 (x `rem` 7)/= 0]
+
+notDivBy5And7 :: Int -> Bool
+notDivBy5And7 x 
+        | x `mod` 5 == 0 = False
+        | x `mod` 7 == 0 = False
+        | otherwise = True
+
+returnNotDivBy5And7ListHOFunct :: [Int] -> [Int]
+returnNotDivBy5And7ListHOFunct list = filter notDivBy5And7 list 
         
 
 
