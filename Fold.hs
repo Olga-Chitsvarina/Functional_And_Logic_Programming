@@ -26,6 +26,33 @@ areEqual :: [Int] -> Bool
 areEqual [] = True
 areEqual (x:xs) = foldl (&&) True (map (x==) xs)
 
+-------------------------------------------------------------------
+
+--This is a helper function for reverseList:
+reverseHelper :: [Int] -> Int -> [Int]
+reverseHelper [] a = [a]
+reverseHelper list a = [a] ++ list
+
+-- This function reverses the list:
+reverseList :: [Int] -> [Int]
+reverseList [] = []
+reverseList list = foldl reverseHelper [] list 
+
+----------------------------------------------------------------------
+-- This function is the helper function for removeDuplicates
+removeDuplicatesHelper :: [Int] -> Int -> [Int]
+removeDuplicatesHelper [] a = [a]
+removeDuplicatesHelper list a 
+        | (myLast == a) = list
+        | otherwise = list ++ [a]
+        where 
+        myLast = last list 
+
+-- This function removes the duplicates from the list of values
+removeDuplicates :: [Int] -> [Int]
+removeDuplicates [] = []
+removeDuplicates (a:[]) = [a]
+removeDuplicates list = foldl removeDuplicatesHelper [] list
 ------------------------------------------------------------------------
 
 -- This function takes the list (resulting list for onlyAscendingLeft)
@@ -71,6 +98,5 @@ onlyAscendingRight:: [Int] -> [Int]
 onlyAscendingRight values = foldr rightHelper [] values
 
 ------------------------------------------------------------
-
 
 
