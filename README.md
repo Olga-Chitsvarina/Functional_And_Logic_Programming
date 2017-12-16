@@ -1,2 +1,2 @@
 # HaskellPractice
-This folder will contain solutions to the different problems.
+This folder will contain solutions to different problems.
