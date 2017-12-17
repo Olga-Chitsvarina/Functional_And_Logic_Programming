@@ -6,6 +6,14 @@ sumArray :: [Int] -> Int
 sumArray [] = 0
 sumArray (x : xs) = x + sumArray xs
 
+
+sumArray2 :: [Int] -> Int
+sumArray2 [] = 0
+sumArray2 array = x + (sumArray xs)
+
+        where 
+        x : xs = array
+
 --------------------------------------------------------------
 -- This function takes one parameter of type Int
 -- It returns the factorial value of that number
