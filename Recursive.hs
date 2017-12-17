@@ -34,4 +34,13 @@ fib n
     | otherwise = fib(n -1) + fib (n-2
 
 --------------------------------------------------------------
+-- This function calculates the gcd of 2 numbers:
+gcf :: Int -> Int -> Int 
+gcf n1 n2  = gcfHelper n1 n2 1 1 
 
+gcfHelper :: Int -> Int -> Int -> Int -> Int
+gcfHelper n1 n2 counter currentResult
+        | (n1 < 0) || (n2 < 0) = gcfHelper (abs n1) (abs n2) counter currentResult 
+        | (counter > n1) || (counter > n2) = currentResult
+        | (n1 `rem` counter == 0) && (n2 `rem` counter == 0) = gcfHelper n1 n2 (counter+1) counter 
+        | otherwise = gcfHelper n1 n2 (counter+1) currentResul
