@@ -9,7 +9,7 @@ sumArray (x : xs) = x + sumArray xs
 
 sumArray2 :: [Int] -> Int
 sumArray2 [] = 0
-sumArray2 array = x + (sumArray xs)
+sumArray2 array = x + (sumArray2 xs)
 
         where 
         x : xs = array
