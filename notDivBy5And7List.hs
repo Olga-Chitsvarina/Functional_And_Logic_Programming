@@ -38,6 +38,10 @@ notDivBy5And7 x
 
 returnNotDivBy5And7ListHOFunct :: [Int] -> [Int]
 returnNotDivBy5And7ListHOFunct list = filter notDivBy5And7 list 
+
+
+notDiv57Filter2 :: [Int] -> [Int]
+notDiv57Filter2 list = filter (\x -> (x `rem` 5 >0 && x `rem` 7 >0)) list
         
 
 
