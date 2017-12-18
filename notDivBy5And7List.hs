@@ -29,6 +29,7 @@ returnNotDivBy5And7ListComprehensions :: [Int] -> [Int]
 returnNotDivBy5And7ListComprehensions list =    [x|x <- list, 
                                                 (x `rem` 5)/= 0, 
                                                 (x `rem` 7)/= 0]
+-----------------------------------------------------------------------------------------------------------------------
 
 notDivBy5And7 :: Int -> Bool
 notDivBy5And7 x 
@@ -42,8 +43,15 @@ returnNotDivBy5And7ListHOFunct list = filter notDivBy5And7 list
 
 notDiv57Filter2 :: [Int] -> [Int]
 notDiv57Filter2 list = filter (\x -> (x `rem` 5 >0 && x `rem` 7 >0)) list
-        
 
+-----------------------------------------------------------------------------------------------------------------------
+notDiv57Fold :: [Int] -> [Int]
+notDiv57Fold list = foldl (foldNotDiv57Help) [] list
+
+foldNotDiv57Help :: [Int] -> Int -> [Int]
+foldNotDiv57Help listB intA 
+        | ((intA `rem` 5 == 0) || (intA `rem` 7 == 0)) = listB 
+        | otherwise = listB ++ [intA]
 
       
         
