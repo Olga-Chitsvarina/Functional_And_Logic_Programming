@@ -13,10 +13,12 @@ minInList list
         | otherwise = foldr min (head list) (tail list)
 
 
--- This function computes the dot product of two lists, passed in as parameters
+-- These functions computes the dot product of two lists, passed in as parameters
 dotProduct :: [Int] -> [Int] -> Int
 dotProduct listA listB = foldr (+) 0 (zipWith (*) listA listB)
  
+dotProduct2 :: [Int] -> [Int] -> Int
+dotProduct2 listA listB =  foldr1 (+) (map (uncurry (*)) zipped)
 
        
 -- This function takes the list as a parameter.
