@@ -120,7 +120,6 @@ minTwo a b
     | (a <= b) = a
     |otherwise = b
 
-
 --This function returns the minimum number of three Float numbers,
 -- it does the comparison, based on the returned value by minTwo
 minThree :: Float -> Float -> Float -> Float
@@ -156,7 +155,6 @@ convertToDogYears age
         | (abs age) <= 2 = ((abs age) * 11) * sign
         | otherwise = (2 * 10.5 + rest*4) * sign
         
-
  where 
         rest = (abs age) - 2
         sign = age/(abs age)
