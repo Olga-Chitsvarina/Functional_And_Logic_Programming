@@ -3,7 +3,7 @@
 
 -- Define the datat type Month:
 data Month =    Jan | Feb | Mar | Apr | May |Jun|
-                Jul | Aug | Sep | Oct | Nov |Dec deriving (Ord, Eq)    
+                Jul | Aug | Sep | Oct | Nov |Dec deriving (Ord, Eq, Enum)    
 
 -- Custom implementation of Show for the Month Data Type:
 instance Show Month where 
