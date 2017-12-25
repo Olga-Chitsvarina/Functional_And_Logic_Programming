@@ -26,15 +26,15 @@ factorial x
 
 ----------------------------------------------------------
 -- This function takes the Int number as a parameter and
--- it returns the n'th Fibonacci number as output
+-- it returns the nth Fibonacci number as output
 fib :: Int -> Int
 fib n
     | n == 0 = 0
     | n == 1 = 1
-    | otherwise = fib(n -1) + fib (n-2
+    | otherwise = fib(n -1) + fib (n-2)
 
 --------------------------------------------------------------
--- This function calculates the gcd of 2 numbers:
+-- This function calculates the GCD of 2 numbers:
 gcf :: Int -> Int -> Int 
 gcf n1 n2  = gcfHelper n1 n2 1 1 
 
