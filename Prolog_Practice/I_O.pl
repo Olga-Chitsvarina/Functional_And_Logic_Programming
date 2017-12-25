@@ -84,5 +84,5 @@ isWorking(computer).
 always_fails_if_notWorking(X) :-
 	notWorking(X),!, fail.
 	
-always_fails_if_notWorking(X) :-
+always_fails_if_notWorking(_) :-
 	write('This item is not broken').
