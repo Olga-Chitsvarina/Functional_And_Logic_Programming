@@ -3,15 +3,15 @@ import Data.Char
 
 ---------------------------------------------------------------------------------
 --This function always returns the number 5
-alwaysFive :: Int 	-- Define the name of the function ("alawaysFive")
-			-- Specify that "alwaysFive" returns an Integer
-alwaysFive = 5		-- Return the integer 5 as the output for the function
+alwaysFive :: Int       -- Define the name of the function ("alawaysFive")
+                        -- Specify that "alwaysFive" returns an Integer
+alwaysFive = 5          -- Return the integer 5 as the output for the function
 
 ---------------------------------------------------------------------
 --This function takes the integer input (parameter) and 
 --returns the square of that number as the output (integer).
-toSquare :: Int -> Int 	-- Parameter type: integer. Output type: integer
-toSquare x = x*x	-- Square the number and return the result
+toSquare :: Int -> Int  -- Parameter type: integer. Output type: integer
+toSquare x = x*x        -- Square the number and return the result
 
 
 -----------------------------------------------------------------------------------------------
@@ -27,40 +27,40 @@ toSquare x = x*x	-- Square the number and return the result
 	----------- 	-}
 
 -- PATTERN MATCHING, SOLUTION 1:
-xor1 :: Bool -> Bool -> Bool	-- parameter1: bool, parameter2: bool, return type: bool 
-xor1 False False = False	-- case1: False and False, the output is False
-xor1 False True  = True		-- case2: False and True, the output is True
-xor1 True  False = True		-- case3: True and False, the output is True
-xor1 True  True  = False	-- case4: True and True, the output is False
+xor1 :: Bool -> Bool -> Bool    -- parameter1: bool, parameter2: bool, return type: bool 
+xor1 False False = False        -- case1: False and False, the output is False
+xor1 False True  = True         -- case2: False and True, the output is True
+xor1 True  False = True         -- case3: True and False, the output is True
+xor1 True  True  = False        -- case4: True and True, the output is False
 
 
 --LOGICAL EXPRESSION1: a'b + ab' (based on the truth table above), SOLUTION 2:
-xor2 :: Bool -> Bool -> Bool		-- parameter1: bool, parameter2: bool, return type:bool 
-xor2 a b = ((not a)&&b)||(a&&(not b))	-- return: result of the logical expression a'b + ab'
+xor2 :: Bool -> Bool -> Bool            -- parameter1: bool, parameter2: bool, return type:bool 
+xor2 a b = ((not a)&&b)||(a&&(not b))   -- return: result of the logical expression a'b + ab'
 
 
 --LOGICAL EXPRESSION2: a/=b (based on the truth table above), SOLUTION 3:	
-xor3 :: Bool -> Bool -> Bool	-- parameter1: bool, parameter2: bool, return type:bool 
-xor3 a b = (a /= b)		-- return: result of the logical expression a/=b
+xor3 :: Bool -> Bool -> Bool    -- parameter1: bool, parameter2: bool, return type:bool 
+xor3 a b = (a /= b)             -- return: result of the logical expression a/=b
 
 
 --IF...THEN...ELSE and LOGICAL EXPRESSION2, SOLUTION 4:
-xor4 :: Bool -> Bool -> Bool			-- parameter1: bool, parameter2: bool, return type:bool 
-xor4 a b = if (a /= b) then True else False	-- return: result of the logical expression a/=b
+xor4 :: Bool -> Bool -> Bool                    -- parameter1: bool, parameter2: bool, return type:bool 
+xor4 a b = if (a /= b) then True else False     -- return: result of the logical expression a/=b
 
 
 --GUARDS1 and LOGICAL EXPRESSION2, SOLUTION 5:
-xor5 :: Bool -> Bool -> Bool	-- parameter1: bool, parameter2: bool, return type:bool
-xor5 a b			-- variables a and b
-  | a == b = False		-- a is equal to b? If "yes" then return False
-  | otherwise = True		-- otherwise return True
+xor5 :: Bool -> Bool -> Bool    -- parameter1: bool, parameter2: bool, return type:bool
+xor5 a b                        -- variables a and b
+  | a == b = False              -- a is equal to b? If "yes" then return False
+  | otherwise = True            -- otherwise return True
 
 
 --GUARDS2 and LOGICAL EXPRESSION2, SOLUTION 6:
-xor6 :: Bool -> Bool -> Bool	-- parameter1: bool, parameter2: bool, return type:bool
-xor6 a b			-- variables a and b
-  | a == b = False		-- if a == b then return False
-xor6 a b = True			-- return True
+xor6 :: Bool -> Bool -> Bool    -- parameter1: bool, parameter2: bool, return type:bool
+xor6 a b                        -- variables a and b
+  | a == b = False              -- if a == b then return False
+xor6 a b = True                 -- return True
 
 ------------------------------------------------------------------------------------------------
 
@@ -80,37 +80,36 @@ returnSign x
 	- It returns boolean True if these 5 integers are equal
 	- and False otherwise.-}
 
-fiveAreEqual :: Int -> Int -> Int -> Int -> Int -> Bool	-- The function takes 5 parameters (integers) and returns a boolean value
-fiveAreEqual a b c d e = (a==b) && (b==c) && (c==d) && (d==e) 	-- Return a = b = c = d = e
+fiveAreEqual :: Int -> Int -> Int -> Int -> Int -> Bool         -- The function takes 5 parameters (integers) and returns a boolean value
+fiveAreEqual a b c d e = (a==b) && (b==c) && (c==d) && (d==e)   -- Return a = b = c = d = e
 
 --------------------------------------------------------------------------------------
-{-	A | B | NAND
+{-      A | B | NAND
+        -----------
+        F | F | T
+        -----------
+        F | T | T
 	-----------
-	F | F | T
-	-----------
-	F | T | T
-	-----------
-	T | F | T
-	----------
-	T | T | F  	
-				-}	
-
+        T | F | T
+        ----------
+        T | T | F
+-}
 -- PATTERN MATCHING, TRUTH TABLE, SOLUTION 1:
-nAnd1 :: Bool -> Bool -> Bool		-- Define the function: 2 parameters and the return type 
-nAnd1 False False = True		-- case1: False and False, return True 
-nAnd1 False True  = True		-- case2: False and True, return True
-nAnd1 True  False = True		-- case3: True and False, return True
-nAnd1 True  True  = False		-- case4: True and True, return False
+nAnd1 :: Bool -> Bool -> Bool           -- Define the function: 2 parameters and the return type 
+nAnd1 False False = True                -- case1: False and False, return True 
+nAnd1 False True  = True                -- case2: False and True, return True
+nAnd1 True  False = True                -- case3: True and False, return True
+nAnd1 True  True  = False               -- case4: True and True, return False
 
 
 -- LOGICAL EXPRESSION (a and b)' (based on the truth table), SOLUTION 2:
-nAnd2 :: Bool -> Bool -> Bool		-- Define the function: 2 parameters and the return type 
-nAnd2 a b = not(a && b) 		-- Return the result of the logical expression "not(a and b)"
+nAnd2 :: Bool -> Bool -> Bool           -- Define the function: 2 parameters and the return type 
+nAnd2 a b = not(a && b)                 -- Return the result of the logical expression "not(a and b)"
 
 
 -- IF...THEN...ELSE and LOGICAL EXPRESSION (a == b == True), SOLUTION 3:
-nAnd3 :: Bool -> Bool -> Bool					-- Define the function: 2 parameters and the return type 
-nAnd3 a b = if ((a==True)&&(b==True)) then False else True	-- Return the result of a == b == True
+nAnd3 :: Bool -> Bool -> Bool                                   -- Define the function: 2 parameters and the return type 
+nAnd3 a b = if ((a==True)&&(b==True)) then False else True      -- Return the result of a == b == True
 
 ----------------------------------------------------------------------------------------
 
