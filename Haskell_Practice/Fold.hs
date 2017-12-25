@@ -19,7 +19,8 @@ dotProduct listA listB = foldr (+) 0 (zipWith (*) listA listB)
  
 dotProduct2 :: [Int] -> [Int] -> Int
 dotProduct2 listA listB =  foldr1 (+) (map (uncurry (*)) zipped)
-
+        where 
+        zipped = zip listA listB
        
 -- This function takes the list as a parameter.
 -- It returns true if all elements in the list are equal
@@ -100,5 +101,3 @@ onlyAscendingRight:: [Int] -> [Int]
 onlyAscendingRight values = foldr rightHelper [] values
 
 ------------------------------------------------------------
-
-
